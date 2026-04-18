@@ -13,14 +13,9 @@
     --gold-dim: rgba(201,168,76,0.15);
     --white: #f5f0e8;
     --muted: rgba(245,240,232,0.5);
-    --green: #2d6a4f;
-    --green-light: #52b788;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:var(--dark); color:var(--white);
-    font-family:'DM Sans',sans-serif; min-height:100vh; overflow-x:hidden;
-  }
+  body { background:var(--dark); color:var(--white); font-family:'DM Sans',sans-serif; min-height:100vh; overflow-x:hidden; }
   body::before {
     content:''; position:fixed; inset:0;
     background:
@@ -31,158 +26,413 @@
   }
   .container { position:relative; z-index:1; max-width:640px; margin:0 auto; padding:48px 24px 80px; }
 
-  /* Header */
   .header { text-align:center; margin-bottom:40px; }
-  .logo-mark {
-    width:56px; height:56px;
-    background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    border-radius:50%; display:flex; align-items:center; justify-content:center;
-    margin:0 auto 20px; font-size:22px;
-    box-shadow:0 0 32px rgba(201,168,76,0.3);
-  }
+  .logo-mark { width:56px; height:56px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:22px; box-shadow:0 0 32px rgba(201,168,76,0.3); }
   .brand { font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
   h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,6vw,44px); font-weight:600; line-height:1.1; color:var(--white); margin-bottom:14px; }
   h1 span { color:var(--gold); font-style:italic; }
   .subtitle { font-size:15px; color:var(--muted); line-height:1.6; max-width:440px; margin:0 auto; }
 
-  /* Divider */
   .divider { display:flex; align-items:center; gap:12px; margin:28px 0; color:var(--gold); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
   .divider::before,.divider::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.4),transparent); }
 
-  /* Inputs */
   .form-group { margin-bottom:24px; }
   label.field-label { display:block; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:500; }
-  input[type="text"] {
-    width:100%; background:rgba(255,255,255,0.04);
-    border:1px solid rgba(201,168,76,0.2); border-radius:8px;
-    padding:14px 18px; color:var(--white); font-family:'DM Sans',sans-serif;
-    font-size:15px; outline:none; transition:border-color 0.2s,background 0.2s;
-  }
+  input[type="text"] { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:14px 18px; color:var(--white); font-family:'DM Sans',sans-serif; font-size:15px; outline:none; transition:border-color 0.2s,background 0.2s; }
   input[type="text"]:focus { border-color:var(--gold); background:rgba(201,168,76,0.06); }
   input::placeholder { color:rgba(245,240,232,0.25); }
 
-  /* Progress */
-  .progress-bar-wrap { background:rgba(255,255,255,0.06); border-radius:999px; height:4px; margin-bottom:28px; }
+  .progress-bar-wrap { background:rgba(255,255,255,0.06); border-radius:999px; height:4px; margin-bottom:10px; }
   .progress-bar { height:4px; border-radius:999px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transition:width 0.4s ease; }
-  .progress-label { font-size:11px; color:var(--muted); text-align:right; margin-top:6px; letter-spacing:1px; }
+  .progress-label { font-size:11px; color:var(--muted); text-align:right; margin-bottom:20px; letter-spacing:1px; }
 
-  /* Pillar section */
   .pillar-section { margin-bottom:32px; }
-  .pillar-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-  .pillar-emoji { font-size:28px; }
-  .pillar-title-wrap {}
-  .pillar-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--white); }
+  .pillar-header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+  .pillar-emoji { font-size:32px; }
+  .pillar-title { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:var(--white); }
   .pillar-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
 
-  /* Questions */
-  .question-block { margin-bottom:20px; }
+  .question-block { margin-bottom:22px; }
   .question-text { font-size:14px; color:var(--white); margin-bottom:10px; line-height:1.5; }
-  .scale-row { display:flex; gap:6px; align-items:center; }
-  .scale-btn {
-    flex:1; padding:10px 4px; background:rgba(255,255,255,0.04);
-    border:1px solid rgba(201,168,76,0.15); border-radius:8px;
-    color:var(--muted); font-size:13px; font-weight:500;
-    cursor:pointer; transition:all 0.2s; text-align:center;
-    font-family:'DM Sans',sans-serif;
-  }
-  .scale-btn:hover { border-color:rgba(201,168,76,0.4); color:var(--white); }
+  .scale-row { display:flex; gap:6px; }
+  .scale-btn { flex:1; padding:11px 4px; background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.15); border-radius:8px; color:var(--muted); font-size:14px; font-weight:600; cursor:pointer; transition:all 0.2s; text-align:center; font-family:'DM Sans',sans-serif; }
+  .scale-btn:hover { border-color:rgba(201,168,76,0.5); color:var(--white); background:rgba(201,168,76,0.08); }
   .scale-btn.selected { background:var(--gold-dim); border-color:var(--gold); color:var(--gold); }
   .scale-labels { display:flex; justify-content:space-between; margin-top:5px; }
   .scale-labels span { font-size:10px; color:var(--muted); }
 
-  /* Nav buttons */
-  .nav-row { display:flex; gap:12px; margin-top:8px; }
-  .btn-next {
-    flex:1; padding:14px; background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    border:none; border-radius:10px; color:var(--dark);
-    font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600;
-    cursor:pointer; transition:opacity 0.2s,transform 0.15s;
-  }
+  .nav-row { display:flex; gap:12px; margin-top:12px; }
+  .btn-next { flex:1; padding:14px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); border:none; border-radius:10px; color:var(--dark); font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s,transform 0.15s; }
   .btn-next:hover { opacity:0.9; transform:translateY(-1px); }
-  .btn-back {
-    padding:14px 20px; background:transparent;
-    border:1px solid rgba(201,168,76,0.25); border-radius:10px;
-    color:var(--muted); font-family:'DM Sans',sans-serif; font-size:15px;
-    cursor:pointer; transition:all 0.2s;
-  }
+  .btn-back { padding:14px 20px; background:transparent; border:1px solid rgba(201,168,76,0.25); border-radius:10px; color:var(--muted); font-family:'DM Sans',sans-serif; font-size:15px; cursor:pointer; transition:all 0.2s; }
   .btn-back:hover { border-color:var(--gold); color:var(--white); }
 
-  /* Results */
   .results-section { animation:fadeIn 0.5s ease; }
   @keyframes fadeIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
 
+  .chart-wrap { display:flex; flex-direction:column; align-items:center; margin-bottom:32px; }
+  .chart-title { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--white); margin-bottom:4px; text-align:center; }
+  .chart-subtitle { font-size:12px; color:var(--muted); margin-bottom:16px; text-align:center; }
+
   .score-grid { display:grid; gap:10px; margin-bottom:28px; }
-  .score-row {
-    background:rgba(255,255,255,0.03); border:1px solid rgba(201,168,76,0.12);
-    border-radius:10px; padding:12px 16px;
-    display:flex; align-items:center; gap:12px;
-  }
-  .score-row.weakest { border-color:var(--gold); background:var(--gold-dim); }
+  .score-row { background:rgba(255,255,255,0.03); border:1px solid rgba(201,168,76,0.12); border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px; }
+  .score-row.weakest { border-color:rgba(240,100,100,0.5); background:rgba(240,100,100,0.06); }
   .score-row-icon { font-size:18px; width:24px; text-align:center; }
   .score-row-name { font-size:14px; font-weight:500; flex:1; }
-  .score-bar-wrap { width:120px; height:6px; background:rgba(255,255,255,0.08); border-radius:999px; }
+  .score-bar-wrap { width:100px; height:6px; background:rgba(255,255,255,0.08); border-radius:999px; }
   .score-bar-fill { height:6px; border-radius:999px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); }
   .score-row.weakest .score-bar-fill { background:linear-gradient(90deg,#e07070,#f0a0a0); }
   .score-pct { font-size:13px; font-weight:600; color:var(--gold); width:36px; text-align:right; }
   .score-row.weakest .score-pct { color:#f0a0a0; }
-  .weakest-tag { font-size:10px; color:#f0a0a0; letter-spacing:1px; text-transform:uppercase; }
+  .weakest-tag { font-size:10px; color:#f0a0a0; letter-spacing:1px; text-transform:uppercase; margin-top:2px; }
 
-  .reveal-box {
-    background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.3);
-    border-radius:12px; padding:20px; margin-bottom:24px; text-align:center;
-  }
+  .reveal-box { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:12px; padding:20px; margin-bottom:24px; text-align:center; }
   .reveal-box h3 { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--gold); margin-bottom:8px; }
   .reveal-box p { font-size:14px; color:var(--muted); line-height:1.6; }
 
-  /* Pod choice */
-  .pod-choice-title { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; font-weight:500; }
+  .pod-choice-title { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; font-weight:500; }
+  .pod-choice-sub { font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.5; }
   .pillars-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .pillar-card { position:relative; cursor:pointer; }
   .pillar-card input[type="radio"] { position:absolute; opacity:0; width:0; height:0; }
-  .pillar-card .card-inner {
-    border:1px solid rgba(201,168,76,0.15); border-radius:12px; padding:14px 12px;
-    background:rgba(255,255,255,0.02); transition:all 0.25s ease;
-    display:flex; align-items:flex-start; gap:10px;
-  }
+  .pillar-card .card-inner { border:1px solid rgba(201,168,76,0.15); border-radius:12px; padding:14px 12px; background:rgba(255,255,255,0.02); transition:all 0.25s ease; display:flex; align-items:flex-start; gap:10px; }
   .pillar-card.recommended .card-inner { border-color:var(--gold); background:var(--gold-dim); }
-  .pillar-card input:checked + .card-inner { border-color:var(--gold); background:var(--gold-dim); box-shadow:0 0 20px rgba(201,168,76,0.15); }
+  .pillar-card input:checked + .card-inner { border-color:var(--gold); background:var(--gold-dim); box-shadow:0 0 20px rgba(201,168,76,0.12); }
   .pillar-card:hover .card-inner { border-color:rgba(201,168,76,0.4); background:rgba(201,168,76,0.05); }
-  .pillar-icon { font-size:20px; flex-shrink:0; margin-top:2px; }
-  .pillar-name { font-weight:600; font-size:13px; color:var(--white); margin-bottom:2px; }
-  .pillar-desc { font-size:11px; color:var(--muted); line-height:1.4; }
+  .p-icon { font-size:20px; flex-shrink:0; margin-top:2px; }
+  .p-name { font-weight:600; font-size:13px; color:var(--white); margin-bottom:2px; }
+  .p-desc { font-size:11px; color:var(--muted); line-height:1.4; }
   .rec-badge { font-size:10px; color:var(--gold); letter-spacing:1px; margin-top:3px; }
-  .pillar-card input:checked + .card-inner .pillar-name::after { content:' ✓'; color:var(--gold); }
+  .pillar-card input:checked + .card-inner .p-name::after { content:' ✓'; color:var(--gold); }
 
-  textarea {
-    width:100%; background:rgba(255,255,255,0.04);
-    border:1px solid rgba(201,168,76,0.2); border-radius:8px;
-    padding:14px 18px; color:var(--white); font-family:'DM Sans',sans-serif;
-    font-size:15px; outline:none; resize:vertical; min-height:80px;
-    transition:border-color 0.2s; margin-top:16px;
-  }
-  textarea:focus { border-color:var(--gold); background:rgba(201,168,76,0.06); }
+  textarea { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:14px 18px; color:var(--white); font-family:'DM Sans',sans-serif; font-size:15px; outline:none; resize:vertical; min-height:80px; transition:border-color 0.2s; margin-top:16px; }
+  textarea:focus { border-color:var(--gold); }
   textarea::placeholder { color:rgba(245,240,232,0.25); }
 
-  .submit-btn {
-    width:100%; padding:16px;
-    background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    border:none; border-radius:10px; color:var(--dark);
-    font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600;
-    cursor:pointer; letter-spacing:0.5px;
-    transition:opacity 0.2s,transform 0.15s; margin-top:16px;
-    display:flex; align-items:center; justify-content:center; gap:8px;
-  }
+  .submit-btn { width:100%; padding:16px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); border:none; border-radius:10px; color:var(--dark); font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s,transform 0.15s; margin-top:16px; display:flex; align-items:center; justify-content:center; gap:8px; }
   .submit-btn:hover:not(:disabled) { opacity:0.9; transform:translateY(-1px); }
   .submit-btn:disabled { opacity:0.6; cursor:not-allowed; }
   .spinner { width:16px; height:16px; border:2px solid rgba(0,0,0,0.2); border-top-color:var(--dark); border-radius:50%; animation:spin 0.7s linear infinite; display:none; }
   @keyframes spin { to{transform:rotate(360deg);} }
-
   .error-msg { background:rgba(255,80,80,0.1); border:1px solid rgba(255,80,80,0.3); border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#ff9999; display:none; }
 
-  /* Success */
   .success { display:none; text-align:center; padding:48px 24px; animation:fadeIn 0.5s ease; }
   .success.show { display:block; }
   .success-icon { font-size:52px; margin-bottom:20px; }
+  .success h2 { font-family:'Cormorant Garamond',serif; font-size:32px; color:var(--gold); margin-bottom:12px; }
+  .success p { color:var(--muted); font-size:15px; line-height:1.6; }
+  .pod-badge { display:inline-block; margin-top:24px; padding:10px 24px; border:1px solid var(--gold); border-radius:999px; font-size:13px; color:var(--gold); letter-spacing:1px; }
+
+  @media(max-width:480px){ .pillars-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-mark">🌳</div>
+    <div class="brand">ARGON Genesis Circle</div>
+    <h1>Your <span>Balanced Growth</span> Score</h1>
+    <p class="subtitle">Answer honestly. This reveals where you are right now — and helps us place you in the right Growth Pod.</p>
+  </div>
+
+  <div id="stepName">
+    <div class="divider">Let's Start</div>
+    <div class="form-group">
+      <label class="field-label">Full Name</label>
+      <input type="text" id="nameInput" placeholder="Enter your name"/>
+    </div>
+    <div class="form-group">
+      <label class="field-label">WhatsApp Number (optional)</label>
+      <input type="text" id="phoneInput" placeholder="+234..."/>
+    </div>
+    <button class="btn-next" onclick="startAssessment()">Begin Assessment →</button>
+  </div>
+
+  <div id="stepAssessment" style="display:none;">
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+    <div class="progress-label" id="progressLabel">Pillar 1 of 7</div>
+    <div id="pillarContent"></div>
+    <div class="nav-row">
+      <button class="btn-back" id="backBtn" onclick="prevPillar()">← Back</button>
+      <button class="btn-next" id="nextBtn" onclick="nextPillar()">Next →</button>
+    </div>
+  </div>
+
+  <div id="stepResults" style="display:none;" class="results-section">
+    <div class="divider">Your Results</div>
+    <div class="chart-wrap">
+      <div class="chart-title">Your ARGON Tree Map</div>
+      <div class="chart-subtitle">A visual snapshot of your balanced growth</div>
+      <canvas id="radarCanvas"></canvas>
+    </div>
+    <div id="scoreGrid" class="score-grid"></div>
+    <div class="reveal-box" id="revealBox"></div>
+    <div class="pod-choice-title">Choose Your Growth Pod</div>
+    <p class="pod-choice-sub">We recommend your weakest pillar — but you can choose any area you feel called to grow in.</p>
+    <div class="pillars-grid" id="podGrid"></div>
+    <textarea id="reasonInput" placeholder="Why this pod? Share what's been on your heart about this area... (optional)"></textarea>
+    <button class="submit-btn" id="submitBtn" onclick="submitForm()">
+      <span id="btnText">Join My Pod 🌿</span>
+      <div class="spinner" id="spinner"></div>
+    </button>
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+
+  <div class="success" id="successMsg">
+    <div class="success-icon">🌳</div>
+    <h2>You're in, Giant.</h2>
+    <p>Your pod choice has been recorded.<br/>Joshua will reach out with your group details soon.</p>
+    <div class="pod-badge" id="podBadge"></div>
+  </div>
+
+</div>
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbySA8sH1o7E1dXN0ZiQf0_YyIbYsmkZiuWypbo6gWGt1RHj1Owfi7fytXkoZktn6aE/exec';
+
+const PILLARS = [
+  { id:'spiritual', name:'Spiritual', icon:'🙏', desc:'Your root — connection with God', podDesc:'Prayer, Scripture & deepening your walk with God',
+    questions:['I have a consistent daily prayer and devotion habit.','I feel genuinely connected to God in my everyday life.','My faith actively shapes the decisions I make.','I spend time in Scripture regularly and it speaks to me.'] },
+  { id:'mental', name:'Mental', icon:'🧠', desc:'Mindset & how you think', podDesc:'Mindset, self-doubt & renewing your thinking',
+    questions:['I am able to control negative or fearful thoughts.','Self-doubt rarely stops me from taking action.','I consistently feed my mind with good content and learning.','I approach challenges with a growth mindset.'] },
+  { id:'emotional', name:'Emotional', icon:'❤️', desc:'Emotional health & resilience', podDesc:'Healing, resilience & emotional intelligence',
+    questions:['I respond to difficult situations rather than react impulsively.','I process emotions in healthy ways rather than suppressing them.','Past hurts or wounds rarely affect my current decisions.','I am emotionally stable even under pressure.'] },
+  { id:'physical', name:'Physical', icon:'💪', desc:'Body stewardship & energy', podDesc:'Health, energy & body stewardship',
+    questions:['I exercise or move my body intentionally at least 3 times a week.','I get adequate sleep and feel rested most mornings.','I am mindful about what I eat and how it affects my energy.','I see my body as a temple and steward it accordingly.'] },
+  { id:'financial', name:'Financial', icon:'💰', desc:'Stewardship & generational thinking', podDesc:'Stewardship, budgeting & generational thinking',
+    questions:['I have a clear understanding of my income and expenses.','I save or invest consistently, even if a small amount.','I make financial decisions based on values not just emotions.','I am building toward financial freedom not just survival.'] },
+  { id:'relational', name:'Relational', icon:'🤝', desc:'Community, friendships & leadership', podDesc:'Community, leadership & lasting friendships',
+    questions:['I have people in my life who genuinely sharpen and challenge me.','I invest in relationships intentionally and consistently.','I am easy to be in relationship with — open, warm and present.','I am actively growing as a leader in my sphere of influence.'] },
+  { id:'purpose', name:'Purpose & Productivity', icon:'🎯', desc:'Your calling & how you execute it', podDesc:'Clarity of calling, focus & faithful execution',
+    questions:['I have a clear sense of what I am called to do in this season.','I have systems that help me execute on my goals consistently.','I rarely feel like I am just busy without being purposeful.','My daily activities are aligned with my long-term assignment.'] }
+];
+
+let currentPillar = 0;
+let scores = {};
+
+function startAssessment() {
+  if (!document.getElementById('nameInput').value.trim()) { alert('Please enter your name.'); return; }
+  document.getElementById('stepName').style.display = 'none';
+  document.getElementById('stepAssessment').style.display = 'block';
+  renderPillar();
+}
+
+function renderPillar() {
+  const p = PILLARS[currentPillar];
+  const total = PILLARS.length;
+  document.getElementById('progressBar').style.width = ((currentPillar / total) * 100) + '%';
+  document.getElementById('progressLabel').textContent = `Pillar ${currentPillar + 1} of ${total} — ${p.name}`;
+  document.getElementById('backBtn').style.visibility = currentPillar === 0 ? 'hidden' : 'visible';
+  document.getElementById('nextBtn').textContent = currentPillar === total - 1 ? 'See My Results →' : 'Next →';
+
+  const existing = scores[p.id] ? scores[p.id].answers : {};
+  let html = `<div class="pillar-section"><div class="pillar-header"><div class="pillar-emoji">${p.icon}</div><div><div class="pillar-title">${p.name}</div><div class="pillar-subtitle">${p.desc}</div></div></div>`;
+  p.questions.forEach((q, qi) => {
+    html += `<div class="question-block"><div class="question-text">${qi+1}. ${q}</div><div class="scale-row">`;
+    for (let v = 1; v <= 5; v++) {
+      html += `<button class="scale-btn ${existing[qi]===v?'selected':''}" onclick="selectAnswer(${qi},${v},this)">${v}</button>`;
+    }
+    html += `</div><div class="scale-labels"><span>Not at all</span><span>Absolutely</span></div></div>`;
+  });
+  html += `</div>`;
+  document.getElementById('pillarContent').innerHTML = html;
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+function selectAnswer(qi, val, btn) {
+  const p = PILLARS[currentPillar];
+  if (!scores[p.id]) scores[p.id] = { answers:{} };
+  scores[p.id].answers[qi] = val;
+  btn.closest('.scale-row').querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function nextPillar() {
+  const p = PILLARS[currentPillar];
+  const ans = scores[p.id] ? scores[p.id].answers : {};
+  if (Object.keys(ans).length < p.questions.length) { alert('Please answer all questions before continuing.'); return; }
+  const total = Object.values(ans).reduce((a,b) => a+b, 0);
+  scores[p.id].avg = total / p.questions.length;
+  scores[p.id].pct = Math.round((scores[p.id].avg / 5) * 100);
+  if (currentPillar < PILLARS.length - 1) { currentPillar++; renderPillar(); }
+  else showResults();
+}
+
+function prevPillar() {
+  if (currentPillar > 0) { currentPillar--; renderPillar(); }
+}
+
+// ── RADAR CHART ──────────────────────────────────────────────────────────────
+function drawRadar(pillarData) {
+  const canvas = document.getElementById('radarCanvas');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const SIZE = Math.min(window.innerWidth - 48, 380);
+
+  canvas.width  = SIZE * dpr;
+  canvas.height = SIZE * dpr;
+  canvas.style.width  = SIZE + 'px';
+  canvas.style.height = SIZE + 'px';
+  ctx.scale(dpr, dpr);
+
+  const cx = SIZE / 2, cy = SIZE / 2;
+  const maxR = SIZE * 0.30;
+  const n = pillarData.length;
+  const LEVELS = 5;
+
+  function angle(i) { return (Math.PI * 2 * i / n) - Math.PI / 2; }
+  function pt(i, r) { return { x: cx + r * Math.cos(angle(i)), y: cy + r * Math.sin(angle(i)) }; }
+
+  // Grid rings
+  for (let l = 1; l <= LEVELS; l++) {
+    const r = (l / LEVELS) * maxR;
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) { const p = pt(i,r); i===0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y); }
+    ctx.closePath();
+    if (l % 2 === 0) { ctx.fillStyle='rgba(255,255,255,0.02)'; ctx.fill(); }
+    ctx.strokeStyle = l===LEVELS ? 'rgba(201,168,76,0.35)' : 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = l===LEVELS ? 1.5 : 0.8;
+    ctx.stroke();
+  }
+
+  // Spokes
+  for (let i = 0; i < n; i++) {
+    const p = pt(i, maxR);
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(p.x,p.y);
+    ctx.strokeStyle='rgba(255,255,255,0.1)'; ctx.lineWidth=1; ctx.stroke();
+  }
+
+  // Data shape — fill
+  ctx.beginPath();
+  pillarData.forEach((d,i) => { const p=pt(i,(d.pct/100)*maxR); i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y); });
+  ctx.closePath();
+  ctx.fillStyle='rgba(201,168,76,0.22)'; ctx.fill();
+
+  // Data shape — stroke
+  ctx.beginPath();
+  pillarData.forEach((d,i) => { const p=pt(i,(d.pct/100)*maxR); i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y); });
+  ctx.closePath();
+  ctx.strokeStyle='rgba(201,168,76,0.95)'; ctx.lineWidth=2.5; ctx.stroke();
+
+  // Vertex dots
+  pillarData.forEach((d,i) => {
+    const p=pt(i,(d.pct/100)*maxR);
+    ctx.beginPath(); ctx.arc(p.x,p.y,5,0,Math.PI*2);
+    ctx.fillStyle=d.isWeakest?'#f08080':'#c9a84c'; ctx.fill();
+    ctx.strokeStyle='#0d0d1a'; ctx.lineWidth=2; ctx.stroke();
+  });
+
+  // Labels
+  const LR = maxR + 34;
+  pillarData.forEach((d,i) => {
+    const p = pt(i, LR);
+    const lines = d.name==='Purpose & Productivity' ? ['Purpose &','Productivity'] : [d.name];
+    const LH = 13, startY = p.y - ((lines.length-1)*LH)/2;
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    lines.forEach((line,li) => {
+      ctx.font = (d.isWeakest?'bold ':'500 ')+'11px DM Sans,sans-serif';
+      ctx.fillStyle = d.isWeakest?'#f08080':'rgba(245,240,232,0.9)';
+      ctx.fillText(line, p.x, startY+li*LH);
+    });
+    ctx.font='10px DM Sans,sans-serif';
+    ctx.fillStyle = d.isWeakest?'rgba(240,128,128,0.8)':'rgba(201,168,76,0.8)';
+    ctx.fillText(d.pct+'%', p.x, startY+lines.length*LH+1);
+  });
+}
+
+// ── RESULTS ──────────────────────────────────────────────────────────────────
+function showResults() {
+  document.getElementById('stepAssessment').style.display = 'none';
+  document.getElementById('stepResults').style.display = 'block';
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  let weakest = PILLARS[0];
+  PILLARS.forEach(p => { if (scores[p.id].pct < scores[weakest.id].pct) weakest = p; });
+
+  // Draw chart after 2 frames so canvas is visible
+  const radarData = PILLARS.map(p => ({ name:p.name, pct:scores[p.id].pct, isWeakest:p.id===weakest.id }));
+  requestAnimationFrame(() => requestAnimationFrame(() => drawRadar(radarData)));
+
+  // Score bars
+  const sorted = [...PILLARS].sort((a,b) => scores[b.id].pct - scores[a.id].pct);
+  document.getElementById('scoreGrid').innerHTML = sorted.map(p => {
+    const pct=scores[p.id].pct, weak=p.id===weakest.id;
+    return `<div class="score-row ${weak?'weakest':''}">
+      <div class="score-row-icon">${p.icon}</div>
+      <div class="score-row-name">${p.name}${weak?'<div class="weakest-tag">↓ Needs most attention</div>':''}</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" style="width:${pct}%"></div></div>
+      <div class="score-pct">${pct}%</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('revealBox').innerHTML = `
+    <h3>${weakest.icon} Weakest Pillar: ${weakest.name}</h3>
+    <p>This is the area that needs the most water right now. We recommend the <strong style="color:var(--white)">${weakest.name} Pod</strong> — but the choice is yours.</p>`;
+
+  document.getElementById('podGrid').innerHTML = PILLARS.map(p => {
+    const rec = p.id===weakest.id;
+    return `<label class="pillar-card ${rec?'recommended':''}">
+      <input type="radio" name="pod" value="${p.id}" ${rec?'checked':''}/>
+      <div class="card-inner">
+        <div class="p-icon">${p.icon}</div>
+        <div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-desc">${p.podDesc}</div>
+          ${rec?'<div class="rec-badge">★ Recommended for you</div>':''}
+        </div>
+      </div>
+    </label>`;
+  }).join('');
+}
+
+// ── SUBMIT ───────────────────────────────────────────────────────────────────
+async function submitForm() {
+  const pod    = document.querySelector('input[name="pod"]:checked');
+  const reason = document.getElementById('reasonInput').value.trim();
+  const name   = document.getElementById('nameInput').value.trim();
+  const phone  = document.getElementById('phoneInput').value.trim();
+  if (!pod) { showError('Please choose a pod.'); return; }
+
+  setLoading(true); hideError();
+
+  const weakest = PILLARS.reduce((a,b) => scores[a.id].pct < scores[b.id].pct ? a : b);
+  const payload = {
+    timestamp: new Date().toLocaleString(),
+    name, phone,
+    pillar: PILLARS.find(p=>p.id===pod.value).name,
+    weakestPillar: weakest.name,
+    scores: PILLARS.map(p=>`${p.name}: ${scores[p.id].pct}%`).join(' | '),
+    reason
+  };
+
+  try {
+    await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
+    showSuccess(pod.value);
+  } catch(err) {
+    setLoading(false);
+    showError('Something went wrong. Please check your connection and try again.');
+  }
+}
+
+function showSuccess(podId) {
+  document.getElementById('stepResults').style.display = 'none';
+  document.getElementById('successMsg').classList.add('show');
+  const p = PILLARS.find(p=>p.id===podId);
+  document.getElementById('podBadge').textContent = `${p.icon} ${p.name} Pod`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function setLoading(on) {
+  document.getElementById('submitBtn').disabled = on;
+  document.getElementById('spinner').style.display = on?'block':'none';
+  document.getElementById('btnText').textContent = on?'Submitting...':'Join My Pod 🌿';
+}
+function showError(msg) { const e=document.getElementById('errorMsg'); e.textContent=msg; e.style.display='block'; }
+function hideError() { document.getElementById('errorMsg').style.display='none'; }
+</script>
+</body>
+</html>
+}
   .success h2 { font-family:'Cormorant Garamond',serif; font-size:32px; color:var(--gold); margin-bottom:12px; }
   .success p { color:var(--muted); font-size:15px; line-height:1.6; }
   .pod-badge { display:inline-block; margin-top:24px; padding:10px 24px; border:1px solid var(--gold); border-radius:999px; font-size:13px; color:var(--gold); letter-spacing:1px; }
